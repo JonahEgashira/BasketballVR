@@ -32,7 +32,11 @@ namespace OVRTouchSample
         [SerializeField] private Animator m_animator = null;
         [SerializeField] private HandPose m_defaultGrabPose = null;
 
+        // Generate Ball
         [SerializeField] private GameObject prefabBall;
+        [SerializeField] private GameObject prefabMiniBall;
+
+        private GameObject newBall = null;
 
         private Collider[] m_colliders = null;
         private bool m_collisionEnabled = true;
@@ -101,9 +105,21 @@ namespace OVRTouchSample
 
             if (OVRInput.GetDown(OVRInput.RawButton.B))
             {
+                if (!ReferenceEquals(null, newBall)) 
+                {
+                    Destroy(newBall);
+                }
                 var pos = m_grabber.transform.position;
                 pos.y += 0.2f;
-                Instantiate(prefabBall, pos, Quaternion.identity);
+                newBall = Instantiate(prefabBall, pos, Quaternion.identity);
+                ScoreText.Attempt++;
+            }
+            if (OVRInput.GetDown(OVRInput.RawButton.A))
+            {
+                var pos = m_grabber.transform.position;
+                pos.y += 0.2f;
+                newBall = Instantiate(prefabMiniBall, pos, Quaternion.identity);
+                ScoreText.Attempt++;
             }
 
             UpdateAnimStates();

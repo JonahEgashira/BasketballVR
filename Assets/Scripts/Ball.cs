@@ -24,6 +24,5 @@ public class Ball : MonoBehaviour
         Debug.Log(other.gameObject.layer);
         if (other.gameObject.layer != 8) return;
         ScoreText.Score++;
-        Debug.Log("Money!!!");
     }
 }
