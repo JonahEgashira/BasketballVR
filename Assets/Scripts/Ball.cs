@@ -6,11 +6,10 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
 
-    private Rigidbody _rigidbodyComponent;
+    private bool _hasTouchedGround;
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbodyComponent = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,10 +18,16 @@ public class Ball : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer == 12) _hasTouchedGround = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.layer);
+        if (_hasTouchedGround) return;
         if (other.gameObject.layer != 8) return;
         ScoreText.Score++;
+        Debug.Log(ScoreText.Attempt + "make");
     }
 }

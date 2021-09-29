@@ -37,6 +37,7 @@ namespace OVRTouchSample
         [SerializeField] private GameObject prefabMiniBall;
 
         private GameObject newBall = null;
+        private GameObject newMiniBall = null;
 
         private Collider[] m_colliders = null;
         private bool m_collisionEnabled = true;
@@ -97,7 +98,7 @@ namespace OVRTouchSample
             m_pointBlend = InputValueRateChange(m_isPointing, m_pointBlend);
             m_thumbsUpBlend = InputValueRateChange(m_isGivingThumbsUp, m_thumbsUpBlend);
 
-            float flex = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
+            float flex = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, m_controller);
 
             bool collisionEnabled = m_grabber.grabbedObject == null && flex >= THRESH_COLLISION_FLEX;
             CollisionEnable(collisionEnabled);
@@ -116,9 +117,13 @@ namespace OVRTouchSample
             }
             if (OVRInput.GetDown(OVRInput.RawButton.A))
             {
+                if (!ReferenceEquals(null, newMiniBall))
+                {
+                    Destroy(newMiniBall);
+                }
                 var pos = m_grabber.transform.position;
                 pos.y += 0.2f;
-                newBall = Instantiate(prefabMiniBall, pos, Quaternion.identity);
+                newMiniBall = Instantiate(prefabMiniBall, pos, Quaternion.identity);
                 ScoreText.Attempt++;
             }
 

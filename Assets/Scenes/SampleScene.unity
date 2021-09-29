@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 79219803}
   - component: {fileID: 79219802}
   - component: {fileID: 79219801}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Court
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1457,7 +1457,7 @@ PrefabInstance:
     - target: {fileID: 966431517405666525, guid: b547d86f46e9d7d4ea4379630118fe9b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 966431517405666525, guid: b547d86f46e9d7d4ea4379630118fe9b,
         type: 3}
@@ -1911,7 +1911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11438496, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
       propertyPath: throwGain
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11438496, guid: e6ba3498ffa1e534b91a07264266e6b8, type: 3}
       propertyPath: m_parentHeldObject
