@@ -233,7 +233,7 @@ namespace OVRTouchSample
             float thumbsUp = canThumbsUp ? m_thumbsUpBlend : 0.0f;
             m_animator.SetLayerWeight(m_animLayerIndexThumb, thumbsUp);
 
-            float pinch = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, m_controller);
+            float pinch = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
             m_animator.SetFloat("Pinch", pinch);
         }
 
