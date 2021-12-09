@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Green
+  m_Text: '2.0
 
 '
 --- !u!222 &21833225
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchor: {fileID: 1350975525}
-  sound: {fileID: 8300000, guid: 3a4baf251c1814716b9458d036384a76, type: 3}
+  sound: {fileID: 0}
 --- !u!4 &679610633
 Transform:
   m_ObjectHideFlags: 0
@@ -1671,9 +1671,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Blue
-
-'
+  m_Text: 1.0
 --- !u!222 &983627704
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1708,7 +1706,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000705017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 80227622}
@@ -2015,6 +2013,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2719817314409889934, guid: a3edacd9914b3fc478eb7c22dea306ba,
         type: 3}
+    - target: {fileID: 11434164, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
+      propertyPath: rayController
+      value: 
+      objectReference: {fileID: 679610631}
     - target: {fileID: 11434164, guid: ba1fa4a8c66106b4988c88fe4b8e8502, type: 3}
       propertyPath: prefabMiniBall
       value: 
@@ -2396,7 +2398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Red
+  m_Text: '0.5
 
 '
 --- !u!222 &1489931486
@@ -2847,7 +2849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760864400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.35, z: -7.15}
+  m_LocalPosition: {x: 0, y: -0.84, z: 6.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 196182789}

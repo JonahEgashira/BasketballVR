@@ -84,6 +84,12 @@ public class OVRGrabber : MonoBehaviour
     {
         get { return m_grabbedObj; }
     }
+    
+    // Set throwGain
+    public void setThrowGain(float newValue)
+    {
+        throwGain = newValue;
+    }
 
 	public void ForceRelease(OVRGrabbable grabbable)
     {
