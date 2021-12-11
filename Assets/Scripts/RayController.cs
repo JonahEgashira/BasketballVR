@@ -18,8 +18,9 @@ public class RayController : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Ray ray = new Ray(anchor.position, anchor.forward);
-        
+        Vector3 adjustVector = new Vector3(-0.05f, 0.0f, 0.0f);
+        Ray ray = new Ray(anchor.position + adjustVector, anchor.forward);
+
         _lineRenderer.SetPosition(0, ray.origin);
         if (Physics.Raycast(ray, out hit, _maxDistance))
         {
