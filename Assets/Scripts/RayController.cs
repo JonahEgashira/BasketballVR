@@ -17,7 +17,7 @@ public class RayController : MonoBehaviour
         _adjustVector = new Vector3(-0.05f, 0.0f, 0.0f);
     }
 
-    public void HitObject()
+    public int HitObject()
     {
         RaycastHit hit;
         Ray ray = new Ray(anchor.position + _adjustVector, anchor.forward);
@@ -35,11 +35,30 @@ public class RayController : MonoBehaviour
                     AudioSource.PlayClipAtPoint(sound, transform.position);
                     target.GetComponent<MeshRenderer>().material.color = Color.red;
                 }
+
+                if (target.CompareTag("0.5")) 
+                {
+                    Debug.Log("0.5 Clicked");
+                    return 1;
+                }
+
+                if (target.CompareTag("1.0"))
+                {
+                    Debug.Log("0.5 Clicked");
+                    return 2;
+                }
+
+                if (target.CompareTag("2.0"))
+                {
+                    Debug.Log("2.0 Clicked");
+                    return 3;
+                }
+                
             }
+
+            return -1;
         }
-        else
-        {
-            _lineRenderer.SetPosition(1, ray.origin + (ray.direction * _maxDistance));
-        }
+        _lineRenderer.SetPosition(1, ray.origin + (ray.direction * _maxDistance));
+        return -1;
     }
 }

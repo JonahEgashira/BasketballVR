@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - RayObject
+  - 0.5
+  - 1.0
+  - 2.0
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -36,12 +37,14 @@ namespace OVRTouchSample
         [SerializeField] private GameObject prefabBall;
         [SerializeField] private GameObject prefabMiniBall;
         
+        // rayController
+        private GameObject _rayController;
+
         private GameObject newBall = null;
         private GameObject newMiniBall = null;
 
         private Collider[] m_colliders = null;
         private bool m_collisionEnabled = true;
-        [SerializeField] private RayController rayController;
         private OVRGrabber m_grabber;
 
         List<Renderer> m_showAfterInputFocusAcquired;
@@ -61,6 +64,7 @@ namespace OVRTouchSample
         private void Awake()
         {
             m_grabber = GetComponent<OVRGrabber>();
+            _rayController = GameObject.Find("RayController");
         }
 
         private void Start()
@@ -104,7 +108,22 @@ namespace OVRTouchSample
             bool collisionEnabled = m_grabber.grabbedObject == null && flex >= THRESH_COLLISION_FLEX;
             CollisionEnable(collisionEnabled);
 
-            rayController.HitObject();
+            // Object reference not set to an instance of an object
+            switch (_rayController.GetComponent<RayController>().HitObject())
+            {
+                case -1:
+                    break;
+                case 1:
+                    m_grabber.setThrowGain(0.5f);
+                    break;
+                case 2:
+                    m_grabber.setThrowGain(1.0f);
+                    break;
+                case 3:
+                    m_grabber.setThrowGain(2.0f);
+                    break;
+            }
+            
             // Generate a ball when button is pressed
             if (OVRInput.GetDown(OVRInput.RawButton.B))
             {
