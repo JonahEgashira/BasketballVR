@@ -9,17 +9,18 @@ public class RayController : MonoBehaviour
     public AudioClip sound;
     private float _maxDistance = 100;
     private LineRenderer _lineRenderer;
+    private Vector3 _adjustVector;
 
     void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
+        _adjustVector = new Vector3(-0.05f, 0.0f, 0.0f);
     }
 
-    void Update()
+    public void HitObject()
     {
         RaycastHit hit;
-        Vector3 adjustVector = new Vector3(-0.05f, 0.0f, 0.0f);
-        Ray ray = new Ray(anchor.position + adjustVector, anchor.forward);
+        Ray ray = new Ray(anchor.position + _adjustVector, anchor.forward);
 
         _lineRenderer.SetPosition(0, ray.origin);
         if (Physics.Raycast(ray, out hit, _maxDistance))

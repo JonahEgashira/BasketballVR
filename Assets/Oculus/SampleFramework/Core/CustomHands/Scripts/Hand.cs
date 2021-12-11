@@ -41,6 +41,7 @@ namespace OVRTouchSample
 
         private Collider[] m_colliders = null;
         private bool m_collisionEnabled = true;
+        [SerializeField] private RayController rayController;
         private OVRGrabber m_grabber;
 
         List<Renderer> m_showAfterInputFocusAcquired;
@@ -103,7 +104,7 @@ namespace OVRTouchSample
             bool collisionEnabled = m_grabber.grabbedObject == null && flex >= THRESH_COLLISION_FLEX;
             CollisionEnable(collisionEnabled);
 
-
+            rayController.HitObject();
             // Generate a ball when button is pressed
             if (OVRInput.GetDown(OVRInput.RawButton.B))
             {
