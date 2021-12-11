@@ -36,9 +36,6 @@ namespace OVRTouchSample
         [SerializeField] private GameObject prefabBall;
         [SerializeField] private GameObject prefabMiniBall;
         
-        // RayController
-        [SerializeField] private GameObject rayController;
-
         private GameObject newBall = null;
         private GameObject newMiniBall = null;
 
@@ -110,7 +107,6 @@ namespace OVRTouchSample
             // Generate a ball when button is pressed
             if (OVRInput.GetDown(OVRInput.RawButton.B))
             {
-                rayController.SetActive(false);
                 if (!ReferenceEquals(null, newBall)) 
                 {
                     Destroy(newBall);
@@ -122,7 +118,6 @@ namespace OVRTouchSample
             }
             if (OVRInput.GetDown(OVRInput.RawButton.A))
             {
-                rayController.SetActive(true);
                 if (!ReferenceEquals(null, newMiniBall))
                 {
                     Destroy(newMiniBall);

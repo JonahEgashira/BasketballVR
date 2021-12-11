@@ -15,7 +15,7 @@ public class RayController : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
     }
 
-    private void Update()
+    void Update()
     {
         RaycastHit hit;
         Ray ray = new Ray(anchor.position, anchor.forward);
