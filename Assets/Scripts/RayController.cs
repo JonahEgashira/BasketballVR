@@ -7,7 +7,7 @@ public class RayController : MonoBehaviour
 {
     public Transform anchor;
     public AudioClip sound;
-    private float _maxDistance = 100;
+    private float _maxDistance = 10000;
     private LineRenderer _lineRenderer;
 
     void Start()
