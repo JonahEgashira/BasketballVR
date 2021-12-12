@@ -127,25 +127,29 @@ namespace OVRTouchSample
             // Generate a ball when button is pressed
             if (OVRInput.GetDown(OVRInput.RawButton.B))
             {
-                if (!ReferenceEquals(null, newBall)) 
-                {
-                    Destroy(newBall);
-                }
-                var pos = m_grabber.transform.position;
-                pos.y += 0.2f;
-                newBall = Instantiate(prefabBall, pos, Quaternion.identity);
-                ScoreText.Attempt++;
+                _rayController.SetActive(false);
+                
+                // if (!ReferenceEquals(null, newBall)) 
+                // {
+                //     Destroy(newBall);
+                // }
+                // var pos = m_grabber.transform.position;
+                // pos.y += 0.2f;
+                // newBall = Instantiate(prefabBall, pos, Quaternion.identity);
+                // ScoreText.Attempt++;
             }
             if (OVRInput.GetDown(OVRInput.RawButton.A))
             {
-                if (!ReferenceEquals(null, newMiniBall))
-                {
-                    Destroy(newMiniBall);
-                }
-                var pos = m_grabber.transform.position;
-                pos.y += 0.2f;
-                newMiniBall = Instantiate(prefabMiniBall, pos, Quaternion.identity);
-                ScoreText.Attempt++;
+                _rayController.SetActive(true);
+
+                // if (!ReferenceEquals(null, newMiniBall))
+                // {
+                //     Destroy(newMiniBall);
+                // }
+                // var pos = m_grabber.transform.position;
+                // pos.y += 0.2f;
+                // newMiniBall = Instantiate(prefabMiniBall, pos, Quaternion.identity);
+                // ScoreText.Attempt++;
             }
 
             UpdateAnimStates();
