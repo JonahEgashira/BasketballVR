@@ -86,7 +86,7 @@ public class OVRGrabber : MonoBehaviour
     }
     
     // Set throwGain
-    public void setThrowGain(float newValue)
+    public void SetThrowGain(float newValue)
     {
         throwGain = newValue;
     }

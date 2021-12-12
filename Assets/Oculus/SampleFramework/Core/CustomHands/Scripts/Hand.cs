@@ -114,13 +114,13 @@ namespace OVRTouchSample
                 case -1:
                     break;
                 case 1:
-                    m_grabber.setThrowGain(0.5f);
+                    m_grabber.SetThrowGain(0.5f);
                     break;
                 case 2:
-                    m_grabber.setThrowGain(1.0f);
+                    m_grabber.SetThrowGain(1.0f);
                     break;
                 case 3:
-                    m_grabber.setThrowGain(2.0f);
+                    m_grabber.SetThrowGain(2.0f);
                     break;
             }
             
