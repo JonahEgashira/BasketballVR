@@ -7,20 +7,22 @@ public class Ball : MonoBehaviour
 {
 
     private bool _hasTouchedGround;
+
+    private GameObject _ballGenerator;
+
     // Start is called before the first frame update
     void Start()
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _ballGenerator = GameObject.Find("BallGenerator");
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == 12) _hasTouchedGround = true;
+        if (other.gameObject.CompareTag("Floor") && !_hasTouchedGround)
+        {
+            _hasTouchedGround = true;
+            _ballGenerator.GetComponent<BallGenerator>().GenerateBall();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
