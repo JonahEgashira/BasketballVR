@@ -28,9 +28,15 @@ public class Ball : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (_hasTouchedGround) return;
-        if (other.gameObject.layer != 8) return;
-        ScoreText.Score++;
-        TargetController.score++;
-        Debug.Log(ScoreText.Attempt + "make");
+        if (other.gameObject.layer == 8)
+        {
+            ScoreText.Score++;
+            Debug.Log(ScoreText.Attempt + "make");
+        }
+
+        if (other.gameObject.CompareTag("Target"))
+        {
+            TargetController.score++;
+        }
     }
 }

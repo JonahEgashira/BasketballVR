@@ -30,6 +30,7 @@ public class BallGenerator : MonoBehaviour
     {
         GameObject newBall = Instantiate(prefabBall, ballStand.transform.position + adjustValue, Quaternion.identity);
         balls.Add(newBall);
+        TargetController.attempt++;
         if (balls.Count >= 3)
         {
             Destroy(balls[0]);
