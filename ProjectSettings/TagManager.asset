@@ -9,6 +9,7 @@ TagManager:
   - 1.0
   - 2.0
   - Floor
+  - Target
   layers:
   - Default
   - TransparentFX

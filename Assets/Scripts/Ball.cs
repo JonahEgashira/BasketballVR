@@ -30,6 +30,7 @@ public class Ball : MonoBehaviour
         if (_hasTouchedGround) return;
         if (other.gameObject.layer != 8) return;
         ScoreText.Score++;
+        TargetController.score++;
         Debug.Log(ScoreText.Attempt + "make");
     }
 }

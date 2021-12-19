@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ThrowGainController : MonoBehaviour
 {
     private GameObject _rightHand;
 
-    [SerializeField] private Text textArea;
+    [SerializeField] private TextMeshProUGUI textArea;
     // Start is called before the first frame update
     private void Awake()
     {
