@@ -44,7 +44,7 @@ public class RayController : MonoBehaviour
 
                 if (target.CompareTag("1.0"))
                 {
-                    Debug.Log("0.5 Clicked");
+                    Debug.Log("1.0 Clicked");
                     return 2;
                 }
 
