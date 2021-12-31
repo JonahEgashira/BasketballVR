@@ -108,18 +108,34 @@ namespace OVRTouchSample
             bool collisionEnabled = m_grabber.grabbedObject == null && flex >= THRESH_COLLISION_FLEX;
             CollisionEnable(collisionEnabled);
 
+            if (ThrowGainController.throwState == 1)
+            {
+                if (TargetController.attempt >= 20)
+                {
+                    m_grabber.SetThrowGain(1.5f);
+                }
+
+                if (TargetController.attempt >= 40)
+                {
+                    m_grabber.SetThrowGain(2.0f);
+                }
+            }
+
             // Object reference not set to an instance of an object
             switch (_rayController.GetComponent<RayController>().HitObject())
             {
                 case -1:
                     break;
                 case 1:
-                    m_grabber.SetThrowGain(0.5f);
+                    ThrowGainController.throwState = 1;
+                    m_grabber.SetThrowGain(1.0f);
                     break;
                 case 2:
+                    ThrowGainController.throwState = 0;
                     m_grabber.SetThrowGain(1.0f);
                     break;
                 case 3:
+                    ThrowGainController.throwState = 2;
                     m_grabber.SetThrowGain(2.0f);
                     break;
             }
