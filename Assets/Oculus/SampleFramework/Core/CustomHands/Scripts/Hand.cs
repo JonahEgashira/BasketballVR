@@ -69,6 +69,7 @@ namespace OVRTouchSample
 
         private void Start()
         {
+            _rayController.SetActive(false);
             m_showAfterInputFocusAcquired = new List<Renderer>();
 
             // Collision starts disabled. We'll enable it for certain cases such as making a fist.
