@@ -16,7 +16,7 @@ public class ThrowGainController : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        throwState = 0;
+        throwState = 2;
         _rightHand = GameObject.Find("CustomHandRight");
     }
 
@@ -35,6 +35,9 @@ public class ThrowGainController : MonoBehaviour
                 _throwStateText = "Random";
                 break;
             case 2:
+                _throwStateText = "Alt";
+                break;
+            case 3:
                 _throwStateText = "High";
                 break;
             default:

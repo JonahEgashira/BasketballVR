@@ -121,6 +121,11 @@ namespace OVRTouchSample
                 }
             }
 
+            if (ThrowGainController.throwState == 2)
+            {
+                m_grabber.SetThrowGain(TargetController.attempt % 20 < 10 ? 1.0f : 1.5f);
+            }
+
             // Object reference not set to an instance of an object
             switch (_rayController.GetComponent<RayController>().HitObject())
             {
@@ -128,14 +133,12 @@ namespace OVRTouchSample
                     break;
                 case 1:
                     ThrowGainController.throwState = 1;
-                    m_grabber.SetThrowGain(1.0f);
                     break;
                 case 2:
-                    ThrowGainController.throwState = 0;
-                    m_grabber.SetThrowGain(1.0f);
+                    ThrowGainController.throwState = 2;
                     break;
                 case 3:
-                    ThrowGainController.throwState = 2;
+                    ThrowGainController.throwState = 3;
                     m_grabber.SetThrowGain(2.0f);
                     break;
             }
